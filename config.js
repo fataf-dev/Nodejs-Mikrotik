@@ -28,6 +28,9 @@ async function createHotspotUser(profile, duration) {
       `=password=${password}`,
       `=profile=${profile}`,
       `=limit-uptime=${duration}`
+      
+       `=shared-users=1`
+
     ]);
     console.log("✅ Ticket créé :", username);
     return username;
