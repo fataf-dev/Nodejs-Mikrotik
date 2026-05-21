@@ -83,25 +83,7 @@ app.post("/generate-ticket", async (req, res) => {
 // ========================
 // 🚀 ROUTE TEST MIKROTIK
 // ========================
-app.post("/push-to-mikrotik", async (req, res) => {
-  try {
-    const { profile, duration } = req.body;
 
-    console.log("📡 PUSH MIKROTIK:", profile, duration);
-
-    const ticket = await createHotspotUser(profile, duration);
-
-    res.json({
-      success: true,
-      ticket,
-      password: ticket
-    });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
-  }
-});
 
 // ========================
 // 🚀 START SERVER

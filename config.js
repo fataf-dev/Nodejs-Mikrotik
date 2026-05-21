@@ -19,7 +19,6 @@ async function createHotspotUser(profile, duration) {
   const username = "RST" + Math.floor(10000 + Math.random() * 90000);
   const password = username;
 
-
   console.log("Création ticket :", username);
   const conn = await connect();
 
@@ -28,9 +27,8 @@ async function createHotspotUser(profile, duration) {
       `=name=${username}`,
       `=password=${password}`,
       `=profile=${profile}`,
-      `=limit-uptime=${duration}` 
-       `=shared-users=1`
-
+      `=limit-uptime=${duration}`,   // ✅ virgule ici
+    
     ]);
     console.log("✅ Ticket créé :", username);
     return username;
